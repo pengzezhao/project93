@@ -12,3 +12,4 @@ var a = {
 }
 var b = clone(a)
 console.log(b)
+console.log(888888888888888888888888);
