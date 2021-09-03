@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script type="text/babel">
+    class Parent extends React.Component{
+        state={
+            parentMsg:''
+        }
+        getChildMsg=data =>{
+            console.log('接收到子组件传递过来的数据：',data)
+            this.setState({
+                parentMsg:data
+            })
+        }
+        render(){
+            return (
+                <div>
+                    父组件：{this.state.parentMsg}
+                    <Child getMsg={this.getChildMsg}/>
+                </div>
+            )
+        }
+    }
+
+    class Child extends React.Component{
+        state={childMsg:'React'}
+        handleClick=()=>{
+            this.props.getMsg(this.state.childMsg)
+        }
+        render(){
+            return (
+                <div>
+                    子组件：<button onClick={this.handleClick}>点我，给父组件传递数据</button>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(<Parent/>, document.getElementById('root'))
+</script>
+</body>
+</html>

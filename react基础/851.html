@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hhh{
+            color:red;
+        }
+    </style>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script type="text/babel">
+    // function Hello() {
+    //     return (<div>这是我的第一个函数组件</div>)
+    // }
+    // class Hello extends React.Component{
+    //     // handleClick(){
+    //     //     console.log('单击事件被处罚了！')
+    //     // }
+    //     onIncrement=()=>{
+    //         console.log(this)
+    //         this.setState({
+    //             count:this.state.count+1
+    //         })
+    //     }
+    //     state={count:0,
+    //         test:'a'
+    //     }
+    //     render(){
+    //         return (<div>
+    //             <h1>计数器：{this.state.count}</h1>
+    //             <button onClick={this.onIncrement}>+1</button>
+    //         </div>)
+    //     }
+    // }
+    // // function Hello() {
+    // //     function handleClick(e) {
+    // //         e.preventDefault()
+    // //         console.log('单击事件被处罚了！')
+    // //     }
+    // //     return (<a href="http://itcast.cn/" onClick={handleClick}>传智播客</a>)
+    // // }
+    // class App extends React.component{
+    //     state={
+    //         txt:''
+    //     }
+    //     handleChange=(e)=>{
+    //         this.setState({
+    //             txt:e.target.value
+    //         })
+    //     }
+    //     render(){
+    //         return (
+    //             <div>
+    //                 <label>
+    //                     <input type="text" value={this.state.txt} onChange={this.handleChange}/>
+    //                 </label>
+    //             </div>)
+    //     }
+    // }
+    let isloading=true
+    const loadData=function () {
+        if (isloading){
+            return <div>loading...</div>
+        }
+        return <div>数据加载完成！！！</div>
+
+    }
+    let songs=[{id:1,name:'痴心绝对1'},
+        {id:2,name:'痴心绝对2'},
+        {id:3,name:'痴心绝对3'}]
+    // const list=(<ul> {songs.map(function (item) {
+    //     return <li>{item.name}</li>
+    //
+    // })}<ul/>)
+    const list=(<ul>
+        {songs.map(function (item) {
+            return <li key="item.id">{item.name}</li>
+        })}
+    </ul>)
+
+    // let name='刘亦菲'
+    // let title=(<h1 className="hhh">hello react======={name}<span> wfhgzgthz</span>{loadData()}</h1>)
+    // let title1=(<h1 className="hhh">{loadData()}</h1>)
+    ReactDOM.render(list, document.getElementById('root'))
+</script>
+</body>
+</html>

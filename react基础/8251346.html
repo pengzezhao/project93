@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+  </style>
+  <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+  <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+  <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root">
+</div>
+<script type="text/babel">
+  function App(props) {
+    console.log(props)
+    return (
+            <div>
+              <h1> props:{props.name}</h1>
+            </div>
+    )
+  }
+
+  class App1 extends React.Component{
+    render(){
+      return (
+              <div>
+                <h1>接收到的数据：{this.props.name}</h1>
+                {this.props.tag}
+              </div>
+      )
+    }
+  }
+  ReactDOM.render(<App1 name={'刘亦菲'}
+                        age={20}
+                        tag={<p>这是一个p标签</p>}
+  />,
+          document.getElementById('root'))
+</script>
+</body>
+</html>

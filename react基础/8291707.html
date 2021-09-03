@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        #d1 {
+            float: left;
+            width: 50%;
+            height: 500px;
+            background-color: aquamarine;
+        }
+
+        #d2 {
+            float: left;
+            width: 50%;
+            height: 500px;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div id="d1" style="overflow: auto">
+        <ul>
+            <li v-for="(v,k) in car" :key="k">
+                {{k}}==={{v}}
+            </li>
+        </ul>
+        <label>
+            <input v-model="message">
+        </label>
+        <h1>{{message}}</h1>
+        <h1>{{commes}}</h1>
+        <h1 style="font-size: 18px">
+            刘亦菲，1987年8月25日出生于湖北省武汉市，华语影视女演员、歌手，毕业于北京电影学院2002级表演系本科。
+            2002年，因出演电视剧《金粉世家》中白秀珠一角踏入演艺圈 [1] 。2003年因主演武侠剧《天龙八部》王语嫣崭露头角 [2] 。2004年凭借仙侠剧《仙剑奇侠传》赵灵儿一角获得了高人气与关注度 [3]
+            。2005年因在武侠剧《神雕侠侣》中饰演小龙女受到广泛关注 [4-5] 。2006年发行首张国语专辑《刘亦菲》和日语专辑《All My Words》 [6-7] ；同年，成为金鹰节历史上首位金鹰女神 [8]
+            。2008年起转战大银幕，并凭借好莱坞电影《功夫之王》成为首位荣登IMDB电影新人排行榜榜首的亚洲女星 [9] 。2009年，获封“四小花旦”之一 [10]
+            。2012年，获得第24届香港专业电影摄影师学会最具魅力女演员奖 [11] 。2014年，凭借古装片《铜雀台》中灵雎一角获得第5届澳门国际电影节最佳女主角奖 [12] 。
+            2015年起，刘亦菲主演的电影《夜孔雀》、《烽火芳菲》均入围国际A类电影节主竞赛单元 [13-14] 。2016年，凭借出演爱情片《第三种爱情》中邹雨一角获得第16届华语电影传媒大奖最受瞩目女演员奖 [15]
+            。2017年，担任迪士尼真人版电影《花木兰》女主角 [16] ，而刘亦菲则凭借该片提名好莱坞评论家选择超级奖动作电影最佳女演员、及第46届美国电影土星奖最佳女主角 [17]
+            ，并入选《好莱坞报道者》评选的“好莱坞新星” [18] 。2021年，主演女性古装励志剧《梦华录》，饰演赵盼儿 [105] 。
+            演艺事业外，刘亦菲还热心慈善公益。2008年向“5·12汶川地震”灾区捐款100万元 [137] 。2021年向河南捐款100万元驰援“7·20河南暴雨” [221] 。
+            中文名刘亦菲外文名Liu Yifei
+            Crystal Liu
+            リウ・イーフェイ
+            유역비别 名茜茜、天仙攻国 籍美国出生地湖北省武汉市出生日期1987年8月25日星 座处女座血 型B型身 高170 cm毕业院校北京电影学院职
+            业演员、歌手代表作品花木兰、二代妖精之今生有幸、功夫之王、铜雀台、神雕侠侣、仙剑奇侠传、倩女幽魂、烽火芳菲、夜孔雀主要成就第5届澳门国际电影节最佳女主角奖
+            第16届华语电影传媒大奖最受瞩目女演员奖
+            提名第46届美国电影土星奖最佳女主角
+            提名第1届评论家选择超级奖动作电影最佳女演员
+            入围第40届蒙特利尔国际电影节最佳女演员展开
+            曾用名安风、刘茜美子特 长民族舞、钢琴、爵士舞音乐代表作心悸、放飞美丽、月の夜、自己出道日期2002年6月18日
+            早年经历编辑 语音
+            刘亦菲童年照
+            刘亦菲童年照(8张)
+            刘亦菲原名为安风，小名为茜茜（读 xīxī）。因父母离异，后随她的母亲刘晓莉改姓刘，她的姥姥为她取名刘茜美子。
+            1995年，8岁的刘亦菲参加了中南商都第2届童花杯童装模特比赛，她在参赛的1800多名少年儿童中以自己良好的表演水平和优越的形体条件夺得冠军 [22] 。
+            刘亦菲在武汉市鄱阳街小学上学，她在“庆六一”文艺晚会上还表演了舞蹈《欢乐的节日》 [23] 。1997年，刘亦菲从鄱阳街小学退学，因母亲工作关系移居美国 [7]
+            。因念书关系及待在美国时间较长，故刘亦菲母亲将其国籍改为美国。同年，刘亦菲在美国纽约开始上中学 [24] 。
+            2002年，回国的刘亦菲参加了北京电影学院的招生考试，并且顺利通过了三轮考试，从而被北京电影学院正式录取 [25] 。
+            演艺经历编辑 语音
+            电视剧时期
+            （2002~2006年）
+            《仙剑奇侠传》饰赵灵儿
+            《仙剑奇侠传》饰赵灵儿(22张)
+            2002年，制片人游建鸣无意中看见刘亦菲担任形象代言的广告，后选中其出演白秀珠一角，刘亦菲因此接触表演进入演艺圈 [26] ；6月18日，刘亦菲正式进组拍摄电视剧《金粉世家》 [27]
+            ；同年，刘亦菲参加了《天龙八部》剧组的试镜，经过试戏她最终被选定出演神仙姐姐王语嫣一角 [28-29] ，9月16日，刘亦菲正式进组拍摄该剧 [30] 。
+        </h1>
+    </div>
+    <div id="d2">
+        <button style="display:block ; margin: 0 auto" id="btn" type="button" class="btn btn-success">点我发送axios请求
+        </button>
+        <p>原始内容</p>
+        <h1>人员列表</h1>
+        <ul>
+            <li v-for="(item , index) in person" :key="index">
+                {{item.name}}=={{item.age}}
+            </li>
+        </ul>
+        <div style="float:left;
+        width: 100px;
+        height: 100px;
+        background-color: #f2f2f2">
+            div1
+        </div>
+        <div style="float:left;
+        width: 100px;
+        height: 100px;
+        background-color: antiquewhite;
+        margin-left: 20px">
+            div2
+        </div>
+    </div>
+
+    <!--    <p>{{ message }}-&#45;&#45;{{arr}}</p>-->
+    <!--    <h1 v-if="flag">v-if控制选择隐藏的区域！</h1>-->
+    <!--    <h1 v-show="flag">v-show控制显示隐藏的区域</h1>-->
+    <!--    <button v-on:click="handle">kkkkkkkkkk</button>-->
+    <!--    <select v-model="city">-->
+    <!--        <option value="">请选择城市</option>-->
+    <!--        <option value="1">北京</option>-->
+    <!--        <option value="2">上海</option>-->
+    <!--        <option value="3">广州</option>-->
+    <!--        <option value="4">深圳</option>-->
+    <!--    </select>-->
+
+</div>
+
+<script>
+
+
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!',
+            arr: [1, 2, 3, 4, 5],
+            city: '2',
+            flag: true,
+            person: [
+                {id: 1, name: 'zs', age: 18},
+                {id: 2, name: 'ls', age: 19},
+                {id: 3, name: 'ww', age: 20}
+            ],
+            car: {
+                name: 'bz',
+                price: 900,
+                color: 'black'
+            }
+        },
+        computed: {
+            commes() {
+                return this.message.toLocaleUpperCase()
+            }
+        },
+
+        methods: {
+            handle() {
+                this.flag = !this.flag
+                console.log(this)
+                console.log(this.arr)
+                this.arr[0] = 'changged！'
+                console.log(this.arr)
+            }
+        },
+        created() {
+
+        },
+        mounted() {
+
+        },
+        beforeMount() {
+
+        },
+
+
+    })
+</script>
+<script>
+
+    let btn = document.querySelector('#btn')
+    console.log(btn)
+    let aaa = null
+    btn.addEventListener('click', async function () {
+        let re = await axios({
+            method: 'GET',
+            url: 'https://api.apiopen.top/getJoke'
+        })
+        aaa = re.data.result
+        console.log(re.data.result)
+        console.log(aaa)
+        document.querySelector('p').innerText = re.data.result[0].text
+
+    })
+
+    // btn.onclick=function () {
+    //     let a=axios({
+    //         method:'GET',
+    //         url:'https://api.apiopen.top/getJoke',
+    //     })
+    //     let arr=null
+    //     a.then(function (data) {
+    //         // console.log(data.data.result)
+    //         arr=data.data.result.slice()
+    //         console.log(arr)
+    //         document.querySelector('p').innerText=arr[0].text
+    //     })
+    //
+    //     console.log(arr)
+    //
+    // }
+</script>
+</body>
+</html>

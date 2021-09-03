@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>原始内容</p>
+<button>点击修改上面的内容</button>
+<script>
+    let obj = {
+        name: '我来试试啊！'
+    }
+    // let btn = document.getElementsByTagName('button')[0]
+    // btn.onclick = function () {
+        let obs = new Observer(obj)
+        console.log(obs)
+        function Observer(obj) {
+            let keys = Object.keys(obj)
+            keys.forEach((k) => {
+                Object.defineProperty(this, k, {
+                    get() {
+                        return obj[k]
+                    },
+                    set(val) {
+                        obj[k] = val
+                        document.getElementsByTagName('p')[0].innerText = obj.name
+                    }
+                })
+            })
+        }
+
+   // }
+</script>
+</body>
+</html>

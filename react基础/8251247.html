@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script type="text/babel">
+    class App extends React.Component {
+        state = {
+            count: 10
+        }
+        onIncrement() {
+            console.log('事件处理程序中的this：', this)
+            this.setState({
+                count: this.state.count + 1
+            })
+        }
+        render() {
+            return (
+                <div>
+                    <h1>计数器：{this.state.count}</h1>
+                    <button onClick={() => this.onIncrement()}>点我加一</button>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(<App/>, document.getElementById('root'))
+</script>
+</body>
+</html>

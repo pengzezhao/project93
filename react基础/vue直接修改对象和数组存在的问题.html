@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{ _data.message }}</p>
+    <h1 v-text='address'></h1>
+    <button v-on:click="handle">点我</button>
+    <h1>{{arr}}</h1>
+</div>
+
+<script>
+    let vm=new Vue({
+        el: '#app',
+        data: {
+            person:{
+                name:'lyf',
+                age:20
+            },
+            message: 'Hello Vue.js!',
+            address:'湖北省武汉市！',
+            arr:[1,2,3,4,5]
+        },
+        methods:{
+            handle() {
+                // this.message='jjjjjjj'
+                console.log(this.arr)
+                this.$set(this.person,'name','刘亦菲')
+                Vue.set(this.person,'name','刘亦菲')
+                this.$delete(this.person,'age')
+                Vue.delete(this.person,'age')
+                this.arr[0]='changed'
+                this.$set(this.arr,0,'changed!')
+                console.log(this.arr)
+            }
+        }
+    })
+</script>
+</body>
+</html>

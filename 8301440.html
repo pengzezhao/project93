@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer {
+            display: flex;
+            width: 200px;
+            height: 200px;
+            background-color: #4CAF50;
+        }
+
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">111wwwww</div>
+    <div class="inner1"></div>
+</div>
+<script>
+    let pa = document.querySelector('.outer')
+    console.log(pa.childNodes)
+    console.log(pa.nodeType, pa.nodeName)
+
+    function travel(root) {
+        let nodes = []
+        function help(root) {
+            for (let i = 0; i < root.childNodes.length; i++) {
+                let node = root.childNodes[i];
+                // 过滤 text 节点、script 节点
+                if ((node.nodeType !== 3) && (node.nodeName !== 'SCRIPT')) {
+                    nodes.push(node);
+                    help(node);
+                }
+            }
+        }
+
+        help(root)
+        return nodes
+    }
+
+    console.log(travel(document.body));
+</script>
+<script>
+
+</script>
+</body>
+</html>

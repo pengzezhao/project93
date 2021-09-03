@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input[type="text"] {
+            width: 150px;
+            display: block;
+            margin-bottom: 10px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<label>
+    <input type="text" value="12345">
+</label>
+<script>
+    let inp = document.querySelector('input')
+    inp.addEventListener('focus', function () {
+        console.log('focus事件被处罚！')
+    })
+    inp.addEventListener('input', function () {
+        console.log('input事件被处罚！')
+    })
+    inp.addEventListener('change', function () {
+        console.log('change事件被处罚！')
+    })
+
+</script>
+</body>
+</html>

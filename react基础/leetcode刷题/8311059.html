@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Promise 使用</h1>
+<button id="btn">点我试试</button>
+<script>
+    let btn = document.getElementById('btn')
+    btn.addEventListener('click', function () {
+        let p = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                let ran = Math.random()
+                if (ran < 0.5) {
+                    resolve(ran)
+                } else {
+                    reject(ran)
+                }
+            }, 1000)
+        })
+        p.then(function (val) {
+            console.log('成功了！' + val)
+        }).catch(function (rea) {
+            console.log('失败了！' + rea)
+        })
+    })
+</script>
+</body>
+</html>

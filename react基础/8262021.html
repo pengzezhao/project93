@@ -1,0 +1,53 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--</body>-->
+<!--</html>-->
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>菜鸟教程 React 实例</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+
+<div id="example"></div>
+<script type="text/babel">
+    function Name(props) {
+        return <h1>网站名称：{props.name}</h1>;
+    }
+    function Url(props) {
+        return <h1>网站地址：{props.url}</h1>;
+    }
+    function Nickname(props) {
+        return <h1>网站小名：{props.nickname}</h1>;
+    }
+    function App() {
+        return (
+            <div>
+                <Name name="菜鸟教程" />
+                <Url url="https://www.runoob.com" />
+                <Nickname nickname="Runoob" />
+            </div>
+        );
+    }
+
+    ReactDOM.render(
+        <App />,
+        document.getElementById('example')
+    );
+
+    let ele=(<h1>jsx元素对吧！！</h1>)
+    console.log(ele)
+</script>
+
+</body>
+</html>

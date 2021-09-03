@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script type="text/babel">
+    function Hello() {
+        return (<div> my first div component!</div>)
+    }
+
+    class Hello1 extends React.Component {
+        handleClick(e) {
+            console.log(e.target)
+            // e.preventDefault()
+            console.log('链接标签单击事件被触发了！')
+        }
+        render() {
+            return (
+                // <div> my first class component!</div>
+                <a href="https://www.baidu.com" onClick={this.handleClick}>百度一下</a>
+            )
+        }
+    }
+
+    // class App extends React.Component{
+    //     handleClick(){
+    //         console.log('单击事件出发了！')
+    //     }
+    //     render(){
+    //         return (
+    //             <button onClick={this.handleClick}>点我！</button>
+    //         )
+    //     }
+    // }
+
+    ReactDOM.render(<Hello1/>, document.getElementById('root'))
+</script>
+</body>
+</html>

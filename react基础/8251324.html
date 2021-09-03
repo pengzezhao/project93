@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root">
+</div>
+<script type="text/babel">
+    class App extends React.Component {
+        state = {
+            txt: ''
+        }
+        handleChange = (e) => {
+            this.setState({
+                txt: e.target.value
+            })
+        }
+        render() {
+            return (
+                <div>
+                    <h1>文本框：{this.state.txt}</h1>
+                    <label>
+                        <input type="text" value={this.state.txt} onChange={this.handleChange}/>
+                    </label>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(<App/>, document.getElementById('root'))
+</script>
+</body>
+</html>

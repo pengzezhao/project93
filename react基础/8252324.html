@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p, div {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<p></p>
+<div></div>
+<p></p>
+<div></div>
+<p></p>
+<script>
+    let obj = {
+        getEle: function (tagName) {
+            return document.getElementsByTagName(tagName)
+        },
+        setStyle: function (eles, value) {
+            for (let i = 0; i < eles.length; i++) {
+                eles[i].style.border = value
+            }
+        }
+    }
+    // let getEle = function (tagName) {
+    //     return document.getElementsByTagName(tagName)
+    // }
+    // let setStyle = function (eles, value) {
+    //     for (let i = 0; i < eles.length; i++) {
+    //         eles[i].style.border = value
+    //     }
+    // }
+    let eles = obj.getEle('p')
+    console.log(eles)
+    obj.setStyle(eles,'2px solid black')
+    // px solid red'
+
+</script>
+</body>
+</html>

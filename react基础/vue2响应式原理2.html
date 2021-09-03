@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let obj={x:100}
+    let obj2={y:200}
+    Object.defineProperty(obj2,'x',{
+        get(){
+            console.log('get被调用了！')
+            return obj.x
+        },
+        set(v){
+            console.log('set被调用了！')
+            obj.x=v
+        }
+    })
+</script>
+</body>
+</html>

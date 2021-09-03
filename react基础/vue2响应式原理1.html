@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //let num = 18
+    let person = {
+        // name: '刘德华',
+        // sex: '男'
+        age:20
+    }
+    let p={}
+    Object.defineProperty(p, 'age', {
+        // enumerable:true,
+        // writable:true,
+        // configurable:true,
+        get() {
+            console.log('有人读取age了！')
+            return person.age
+        },
+        set(v) {
+            console.log('有人修改了age，值为' + v)
+            person.age = v
+        }
+    })
+
+</script>
+</body>
+</html>
